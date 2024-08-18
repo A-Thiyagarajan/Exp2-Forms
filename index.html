@@ -3,500 +3,787 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forms by Thiyagarajan</title>
+    <title>Forms</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
             margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+            padding: 20px;
+            background-color: #f4f4f4;
         }
-
-        .container {
+        .form-container {
+            width: 100%;
             max-width: 600px;
-            margin: 20px auto;
+            margin: 10px 0;
             padding: 20px;
             background-color: #fff;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-
-        .container h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #333;
-        }
-
         .form-group {
             margin-bottom: 15px;
         }
-
         .form-group label {
             display: block;
             margin-bottom: 5px;
-            color: #555;
         }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
+        .form-group input, .form-group textarea, .form-group select {
             width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
+            padding: 8px;
+            border: 1px solid #ddd;
             border-radius: 4px;
-            font-size: 16px;
-            resize: vertical;
         }
-
         .form-group input[type="submit"] {
-            background-color: #5cb85c;
+            background-color: #007bff;
             color: #fff;
             border: none;
             cursor: pointer;
-            transition: background-color 0.3s ease;
         }
-
         .form-group input[type="submit"]:hover {
-            background-color: #4cae4c;
-        }
-
-        @media (max-width: 600px) {
-            .form-group input,
-            .form-group textarea,
-            .form-group select {
-                font-size: 14px;
-            }
-        }
-
-        .form-group select {
-            appearance: none;
-            background-color: #f9f9f9;
-        }
-
-        hr {
-            margin: 30px 0;
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h2>Contact Form</h2>
-    <form action="/submit-contact" method="post">
-        <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-        </div>
-        <div class="form-group">
-            <input type="submit" value="Submit">
-        </div>
-    </form>
-</div>
+    <!-- Form 1: Contact Form -->
+    <div class="form-container">
+        <h3>Contact Form</h3>
+        <form action="/submit-contact" method="post">
+            <div class="form-group">
+                <label for="contact-name">Name:</label>
+                <input type="text" id="contact-name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="contact-email">Email:</label>
+                <input type="email" id="contact-email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="contact-message">Message:</label>
+                <textarea id="contact-message" name="message" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Send Message">
+            </div>
+        </form>
+    </div>
 
-<hr>
+    <!-- Form 2: Feedback Form -->
+    <div class="form-container">
+        <h3>Feedback Form</h3>
+        <form action="/submit-feedback" method="post">
+            <div class="form-group">
+                <label for="feedback-name">Name:</label>
+                <input type="text" id="feedback-name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="feedback-email">Email:</label>
+                <input type="email" id="feedback-email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="feedback-comments">Comments:</label>
+                <textarea id="feedback-comments" name="comments" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit Feedback">
+            </div>
+        </form>
+    </div>
 
-<div class="container">
-    <h2>Feedback Form</h2>
-    <form action="/submit-feedback" method="post">
-        <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-            <label for="rating">Rating:</label>
-            <select id="rating" name="rating" required>
-                <option value="excellent">Excellent</option>
-                <option value="good">Good</option>
-                <option value="average">Average</option>
-                <option value="poor">Poor</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="comments">Comments:</label>
-            <textarea id="comments" name="comments" required></textarea>
-        </div>
-        <div class="form-group">
-            <input type="submit" value="Submit Feedback">
-        </div>
-    </form>
-</div>
+    <!-- Form 3: Registration Form -->
+    <div class="form-container">
+        <h3>Registration Form</h3>
+        <form action="/submit-registration" method="post">
+            <div class="form-group">
+                <label for="registration-username">Username:</label>
+                <input type="text" id="registration-username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="registration-email">Email:</label>
+                <input type="email" id="registration-email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="registration-password">Password:</label>
+                <input type="password" id="registration-password" name="password" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Register">
+            </div>
+        </form>
+    </div>
 
-<hr>
+    <!-- Form 4: Login Form -->
+    <div class="form-container">
+        <h3>Login Form</h3>
+        <form action="/submit-login" method="post">
+            <div class="form-group">
+                <label for="login-email">Email:</label>
+                <input type="email" id="login-email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" name="password" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Login">
+            </div>
+        </form>
+    </div>
 
-<div class="container">
-    <h2>Registration Form</h2>
-    <form action="/submit-registration" method="post">
-        <div class="form-group">
-            <label for="first-name">First Name:</label>
-            <input type="text" id="first-name" name="first-name" required>
-        </div>
-        <div class="form-group">
-            <label for="last-name">Last Name:</label>
-            <input type="text" id="last-name" name="last-name" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-        </div>
-        <div class="form-group">
-            <input type="submit" value="Register">
-        </div>
-    </form>
-</div>
+    <!-- Form 5: Subscription Form -->
+    <div class="form-container">
+        <h3>Subscription Form</h3>
+        <form action="/submit-subscription" method="post">
+            <div class="form-group">
+                <label for="subscription-email">Email:</label>
+                <input type="email" id="subscription-email" name="email" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Subscribe">
+            </div>
+        </form>
+    </div>
 
-<hr>
+    <!-- Form 6: Survey Form -->
+    <div class="form-container">
+        <h3>Survey Form</h3>
+        <form action="/submit-survey" method="post">
+            <div class="form-group">
+                <label for="survey-name">Name:</label>
+                <input type="text" id="survey-name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="survey-email">Email:</label>
+                <input type="email" id="survey-email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="survey-feedback">Feedback:</label>
+                <textarea id="survey-feedback" name="feedback" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit Survey">
+            </div>
+        </form>
+    </div>
 
-<div class="container">
-    <h2>Survey Form</h2>
-    <form action="/submit-survey" method="post">
-        <div class="form-group">
-            <label for="age">Age:</label>
-            <input type="number" id="age" name="age" required>
-        </div>
-        <div class="form-group">
-            <label for="gender">Gender:</label>
-            <select id="gender" name="gender" required>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="occupation">Occupation:</label>
-            <input type="text" id="occupation" name="occupation" required>
-        </div>
-        <div class="form-group">
-            <label for="feedback">Survey Feedback:</label>
-            <textarea id="feedback" name="feedback" required></textarea>
-        </div>
-        <div class="form-group">
-            <input type="submit" value="Submit Survey">
-        </div>
-    </form>
-</div>
+    <!-- Form 7: Contact Us -->
+    <div class="form-container">
+        <h3>Contact Us</h3>
+        <form action="/submit-contact" method="post">
+            <div class="form-group">
+                <label for="contact-name">Name:</label>
+                <input type="text" id="contact-name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="contact-email">Email:</label>
+                <input type="email" id="contact-email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="contact-message">Message:</label>
+                <textarea id="contact-message" name="message" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Send Message">
+            </div>
+        </form>
+    </div>
 
-<hr>
+    <!-- Form 8: Product Feedback -->
+    <div class="form-container">
+        <h3>Product Feedback</h3>
+        <form action="/submit-product-feedback" method="post">
+            <div class="form-group">
+                <label for="product-feedback-name">Name:</label>
+                <input type="text" id="product-feedback-name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="product-feedback-email">Email:</label>
+                <input type="email" id="product-feedback-email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="product-feedback-rating">Rating:</label>
+                <select id="product-feedback-rating" name="rating" required>
+                    <option value="1">1 Star</option>
+                    <option value="2">2 Stars</option>
+                    <option value="3">3 Stars</option>
+                    <option value="4">4 Stars</option>
+                    <option value="5">5 Stars</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="product-feedback-comments">Comments:</label>
+                <textarea id="product-feedback-comments" name="comments" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit Feedback">
+            </div>
+        </form>
+    </div>
 
-<div class="container">
-    <h2>Newsletter Subscription Form</h2>
-    <form action="/submit-newsletter" method="post">
-        <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-            <input type="submit" value="Subscribe">
-        </div>
-    </form>
-</div>
+    <!-- Form 9: Newsletter Signup -->
+    <div class="form-container">
+        <h3>Newsletter Signup</h3>
+        <form action="/submit-newsletter" method="post">
+            <div class="form-group">
+                <label for="newsletter-email">Email:</label>
+                <input type="email" id="newsletter-email" name="email" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Sign Up">
+            </div>
+        </form>
+    </div>
 
-<hr>
+    <!-- Form 10: Job Application -->
+    <div class="form-container">
+        <h3>Job Application</h3>
+        <form action="/submit-job-application" method="post">
+            <div class="form-group">
+                <label for="job-application-name">Name:</label>
+                <input type="text" id="job-application-name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="job-application-email">Email:</label>
+                <input type="email" id="job-application-email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="job-application-resume">Resume:</label>
+                <input type="file" id="job-application-resume" name="resume" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Apply Now">
+            </div>
+        </form>
+    </div>
 
-<div class="container">
-    <h2>Appointment Booking Form</h2>
-    <form action="/submit-appointment" method="post">
-        <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-            <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" required>
-        </div>
-        <div class="form-group">
-            <label for="date">Preferred Date:</label>
-            <input type="date" id="date" name="date" required>
-        </div>
-        <div class="form-group">
-            <label for="time">Preferred Time:</label>
-            <input type="time" id="time" name="time" required>
-        </div>
-        <div class="form-group">
-            <input type="submit" value="Book Appointment">
-        </div>
-    </form>
-</div>
+    <!-- Form 11: Appointment Booking -->
+    <div class="form-container">
+        <h3>Appointment Booking</h3>
+        <form action="/submit-appointment" method="post">
+            <div class="form-group">
+                <label for="appointment-name">Name:</label>
+                <input type="text" id="appointment-name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="appointment-email">Email:</label>
+                <input type="email" id="appointment-email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="appointment-date">Date:</label>
+                <input type="date" id="appointment-date" name="date" required>
+            </div>
+            <div class="form-group">
+                <label for="appointment-time">Time:</label>
+                <input type="time" id="appointment-time" name="time" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Book Appointment">
+            </div>
+        </form>
+    </div>
 
-<hr>
+    <!-- Form 12: Event Registration -->
+    <div class="form-container">
+        <h3>Event Registration</h3>
+        <form action="/submit-event-registration" method="post">
+            <div class="form-group">
+                <label for="event-registration-name">Name:</label>
+                <input type="text" id="event-registration-name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="event-registration-email">Email:</label>
+                <input type="email" id="event-registration-email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="event-registration-event">Event:</label>
+                <input type="text" id="event-registration-event" name="event" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Register for Event">
+            </div>
+        </form>
+    </div>
 
-<div class="container">
-    <h2>Job Application Form</h2>
-    <form action="/submit-application" method="post">
-        <div class="form-group">
-            <label for="first-name">First Name:</label>
-            <input type="text" id="first-name" name="first-name" required>
-        </div>
-        <div class="form-group">
-            <label for="last-name">Last Name:</label>
-            <input type="text" id="last-name" name="last-name" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-            <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" required>
-        </div>
-        <div class="form-group">
-            <label for="resume">Upload Resume:</label>
-            <input type="file" id="resume" name="resume" required>
-        </div>
-        <div class="form-group">
-            <input type="submit" value="Apply">
-        </div>
-    </form>
-</div>
+    <!-- Form 13: Product Inquiry -->
+    <div class="form-container">
+        <h3>Product Inquiry</h3>
+        <form action="/submit-product-inquiry" method="post">
+            <div class="form-group">
+                <label for="product-inquiry-name">Name:</label>
+                <input type="text" id="product-inquiry-name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="product-inquiry-email">Email:</label>
+                <input type="email" id="product-inquiry-email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="product-inquiry-product">Product:</label>
+                <input type="text" id="product-inquiry-product" name="product" required>
+            </div>
+            <div class="form-group">
+                <label for="product-inquiry-message">Message:</label>
+                <textarea id="product-inquiry-message" name="message" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit Inquiry">
+            </div>
+        </form>
+    </div>
 
-<hr>
+    <!-- Form 14: Service Request -->
+    <div class="form-container">
+        <h3>Service Request</h3>
+        <form action="/submit-service-request" method="post">
+            <div class="form-group">
+                <label for="service-request-name">Name:</label>
+                <input type="text" id="service-request-name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="service-request-email">Email:</label>
+                <input type="email" id="service-request-email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="service-request-description">Description:</label>
+                <textarea id="service-request-description" name="description" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Request Service">
+            </div>
+        </form>
+    </div>
 
-<div class="container">
-    <h2>Event Registration Form</h2>
-    <form action="/submit-event-registration" method="post">
-        <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-            <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" required>
-        </div>
-        <div class="form-group">
-            <label for="event">Event:</label>
-            <select id="event" name="event" required>
-                <option value="conference">Conference</option>
-                <option value="webinar">Webinar</option>
-                <option value="workshop">Workshop</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <input type="submit" value="Register">
-        </div>
-    </form>
-</div>
+    <!-- Form 15: Technical Support -->
+    <div class="form-container">
+        <h3>Technical Support</h3>
+        <form action="/submit-technical-support" method="post">
+            <div class="form-group">
+                <label for="technical-support-name">Name:</label>
+                <input type="text" id="technical-support-name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="technical-support-email">Email:</label>
+                <input type="email" id="technical-support-email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="technical-support-issue">Issue:</label>
+                <textarea id="technical-support-issue" name="issue" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit Support Request">
+            </div>
+        </form>
+    </div>
 
-<hr>
+    <!-- Form 16: Membership Application -->
+    <div class="form-container">
+        <h3>Membership Application</h3>
+        <form action="/submit-membership-application" method="post">
+            <div class="form-group">
+                <label for="membership-application-name">Name:</label>
+                <input type="text" id="membership-application-name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="membership-application-email">Email:</label>
+                <input type="email" id="membership-application-email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="membership-application-phone">Phone:</label>
+                <input type="tel" id="membership-application-phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Apply for Membership">
+            </div>
+        </form>
+    </div>
 
-<div class="container">
-    <h2>Donation Form</h2>
-    <form action="/submit-donation" method="post">
-        <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-            <label for="amount">Donation Amount:</label>
-            <input type="number" id="amount" name="amount" required>
-        </div>
-        <div class="form-group">
-            <input type="submit" value="Donate">
-        </div>
-    </form>
-</div>
+    <!-- Form 17: Order Form -->
+    <div class="form-container">
+        <h3>Order Form</h3>
+        <form action="/submit-order" method="post">
+            <div class="form-group">
+                <label for="order-name">Name:</label>
+                <input type="text" id="order-name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="order-email">Email:</label>
+                <input type="email" id="order-email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="order-item">Item:</label>
+                <input type="text" id="order-item" name="item" required>
+            </div>
+            <div class="form-group">
+                <label for="order-quantity">Quantity:</label>
+                <input type="number" id="order-quantity" name="quantity" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Place Order">
+            </div>
+        </form>
+    </div>
 
-<hr>
+    <!-- Form 18: Appointment Scheduling -->
+    <div class="form-container">
+        <h3>Appointment Scheduling</h3>
+        <form action="/submit-appointment-scheduling" method="post">
+            <div class="form-group">
+                <label for="appointment-scheduling-name">Name:</label>
+                <input type="text" id="appointment-scheduling-name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="appointment-scheduling-email">Email:</label>
+                <input type="email" id="appointment-scheduling-email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="appointment-scheduling-date">Date:</label>
+                <input type="date" id="appointment-scheduling-date" name="date" required>
+            </div>
+            <div class="form-group">
+                <label for="appointment-scheduling-time">Time:</label>
+                <input type="time" id="appointment-scheduling-time" name="time" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Schedule Appointment">
+            </div>
+        </form>
+    </div>
 
-<div class="container">
-    <h2>Support Ticket Form</h2>
-    <form action="/submit-support" method="post">
-        <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-            <label for="issue">Issue:</label>
-            <textarea id="issue" name="issue" required></textarea>
-        </div>
-        <div class="form-group">
-            <input type="submit" value="Submit Ticket">
-        </div>
-    </form>
-</div>
+    <!-- Form 19: Travel Request -->
+    <div class="form-container">
+        <h3>Travel Request</h3>
+        <form action="/submit-travel-request" method="post">
+            <div class="form-group">
+                <label for="travel-request-name">Name:</label>
+                <input type="text" id="travel-request-name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="travel-request-email">Email:</label>
+                <input type="email" id="travel-request-email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="travel-request-destination">Destination:</label>
+                <input type="text" id="travel-request-destination" name="destination" required>
+            </div>
+            <div class="form-group">
+                <label for="travel-request-date">Date:</label>
+                <input type="date" id="travel-request-date" name="date" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Request Travel">
+            </div>
+        </form>
+    </div>
 
-<hr>
+    <!-- Form 20: Product Review -->
+    <div class="form-container">
+        <h3>Product Review</h3>
+        <form action="/submit-product-review" method="post">
+            <div class="form-group">
+                <label for="product-review-name">Name:</label>
+                <input type="text" id="product-review-name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="product-review-email">Email:</label>
+                <input type="email" id="product-review-email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="product-review-rating">Rating:</label>
+                <select id="product-review-rating" name="rating" required>
+                    <option value="1">1 Star</option>
+                    <option value="2">2 Stars</option>
+                    <option value="3">3 Stars</option>
+                    <option value="4">4 Stars</option>
+                    <option value="5">5 Stars</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="product-review-comments">Comments:</label>
+                <textarea id="product-review-comments" name="comments" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit Review">
+            </div>
+        </form>
+    </div>
 
-<div class="container">
-    <h2>Reservation Form</h2>
-    <form action="/submit-reservation" method="post">
-        <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-            <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" required>
-        </div>
-        <div class="form-group">
-            <label for="date">Reservation Date:</label>
-            <input type="date" id="date" name="date" required>
-        </div>
-        <div class="form-group">
-            <label for="time">Reservation Time:</label>
-            <input type="time" id="time" name="time" required>
-        </div>
-        <div class="form-group">
-            <input type="submit" value="Book Reservation">
-        </div>
-    </form>
-</div>
+    <!-- Form 21: Donation Form -->
+    <div class="form-container">
+        <h3>Donation Form</h3>
+        <form action="/submit-donation" method="post">
+            <div class="form-group">
+                <label for="donation-name">Name:</label>
+                <input type="text" id="donation-name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="donation-email">Email:</label>
+                <input type="email" id="donation-email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="donation-amount">Amount:</label>
+                <input type="number" id="donation-amount" name="amount" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Donate">
+            </div>
+        </form>
+    </div>
 
-<hr>
+    <!-- Form 22: Membership Renewal -->
+    <div class="form-container">
+        <h3>Membership Renewal</h3>
+        <form action="/submit-membership-renewal" method="post">
+            <div class="form-group">
+                <label for="membership-renewal-name">Name:</label>
+                <input type="text" id="membership-renewal-name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="membership-renewal-email">Email:</label>
+                <input type="email" id="membership-renewal-email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="membership-renewal-id">Membership ID:</label>
+                <input type="text" id="membership-renewal-id" name="membership_id" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Renew Membership">
+            </div>
+        </form>
+    </div>
 
-<div class="container">
-    <h2>Newsletter Sign-Up Form</h2>
-    <form action="/submit-newsletter-signup" method="post">
-        <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-            <label for="preferences">Newsletter Preferences:</label>
-            <select id="preferences" name="preferences" required>
-                <option value="daily">Daily</option>
-                <option value="weekly">Weekly</option>
-                <option value="monthly">Monthly</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <input type="submit" value="Sign Up">
-        </div>
-    </form>
-</div>
+    <!-- Form 23: Appointment Cancellation -->
+    <div class="form-container">
+        <h3>Appointment Cancellation</h3>
+        <form action="/submit-appointment-cancellation" method="post">
+            <div class="form-group">
+                <label for="appointment-cancellation-name">Name:</label>
+                <input type="text" id="appointment-cancellation-name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="appointment-cancellation-email">Email:</label>
+                <input type="email" id="appointment-cancellation-email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="appointment-cancellation-date">Date:</label>
+                <input type="date" id="appointment-cancellation-date" name="date" required>
+            </div>
+            <div class="form-group">
+                <label for="appointment-cancellation-time">Time:</label>
+                <input type="time" id="appointment-cancellation-time" name="time" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Cancel Appointment">
+            </div>
+        </form>
+    </div>
 
-<hr>
+    <!-- Form 24: Product Return -->
+    <div class="form-container">
+        <h3>Product Return</h3>
+        <form action="/submit-product-return" method="post">
+            <div class="form-group">
+                <label for="product-return-name">Name:</label>
+                <input type="text" id="product-return-name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="product-return-email">Email:</label>
+                <input type="email" id="product-return-email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="product-return-order-number">Order Number:</label>
+                <input type="text" id="product-return-order-number" name="order_number" required>
+            </div>
+            <div class="form-group">
+                <label for="product-return-reason">Reason:</label>
+                <textarea id="product-return-reason" name="reason" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit Return">
+            </div>
+        </form>
+    </div>
 
-<div class="container">
-    <h2>Product Order Form</h2>
-    <form action="/submit-order" method="post">
-        <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-            <label for="address">Shipping Address:</label>
-            <textarea id="address" name="address" required></textarea>
-        </div>
-        <div class="form-group">
-            <label for="product">Product:</label>
-            <select id="product" name="product" required>
-                <option value="product1">Product 1</option>
-                <option value="product2">Product 2</option>
-                <option value="product3">Product 3</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <input type="submit" value="Place Order">
-        </div>
-    </form>
-</div>
+    <!-- Form 25: Job Feedback -->
+    <div class="form-container">
+        <h3>Job Feedback</h3>
+        <form action="/submit-job-feedback" method="post">
+            <div class="form-group">
+                <label for="job-feedback-name">Name:</label>
+                <input type="text" id="job-feedback-name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="job-feedback-email">Email:</label>
+                <input type="email" id="job-feedback-email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="job-feedback-comments">Comments:</label>
+                <textarea id="job-feedback-comments" name="comments" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit Feedback">
+            </div>
+        </form>
+    </div>
 
-<hr>
+    <!-- Form 26: Customer Support -->
+    <div class="form-container">
+        <h3>Customer Support</h3>
+        <form action="/submit-customer-support" method="post">
+            <div class="form-group">
+                <label for="customer-support-name">Name:</label>
+                <input type="text" id="customer-support-name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="customer-support-email">Email:</label>
+                <input type="email" id="customer-support-email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="customer-support-issue">Issue:</label>
+                <textarea id="customer-support-issue" name="issue" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit Support Request">
+            </div>
+        </form>
+    </div>
 
-<div class="container">
-    <h2>Volunteer Sign-Up Form</h2>
-    <form action="/submit-volunteer" method="post">
-        <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-            <label for="availability">Availability:</label>
-            <select id="availability" name="availability" required>
-                <option value="weekdays">Weekdays</option>
-                <option value="weekends">Weekends</option>
-                <option value="evenings">Evenings</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <input type="submit" value="Sign Up to Volunteer">
-        </div>
-    </form>
-</div>
+    <!-- Form 27: Service Inquiry -->
+    <div class="form-container">
+        <h3>Service Inquiry</h3>
+        <form action="/submit-service-inquiry" method="post">
+            <div class="form-group">
+                <label for="service-inquiry-name">Name:</label>
+                <input type="text" id="service-inquiry-name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="service-inquiry-email">Email:</label>
+                <input type="email" id="service-inquiry-email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="service-inquiry-service">Service:</label>
+                <input type="text" id="service-inquiry-service" name="service" required>
+            </div>
+            <div class="form-group">
+                <label for="service-inquiry-message">Message:</label>
+                <textarea id="service-inquiry-message" name="message" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit Inquiry">
+            </div>
+        </form>
+    </div>
 
-<hr>
+    <!-- Form 28: Volunteer Sign Up -->
+    <div class="form-container">
+        <h3>Volunteer Sign Up</h3>
+        <form action="/submit-volunteer-signup" method="post">
+            <div class="form-group">
+                <label for="volunteer-signup-name">Name:</label>
+                <input type="text" id="volunteer-signup-name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="volunteer-signup-email">Email:</label>
+                <input type="email" id="volunteer-signup-email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="volunteer-signup-phone">Phone:</label>
+                <input type="tel" id="volunteer-signup-phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Sign Up to Volunteer">
+            </div>
+        </form>
+    </div>
 
-<div class="container">
-    <h2>Feedback Survey Form</h2>
-    <form action="/submit-survey-feedback" method="post">
-        <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-            <label for="experience">How was your experience?</label>
-            <select id="experience" name="experience" required>
-                <option value="excellent">Excellent</option>
-                <option value="good">Good</option>
-                <option value="average">Average</option>
-                <option value="poor">Poor</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="suggestions">Any suggestions for improvement?</label>
-            <textarea id="suggestions" name="suggestions" required></textarea>
-        </div>
-        <div class="form-group">
-            <input type="submit" value="Submit Feedback">
-        </div>
-    </form>
-</div>
+    <!-- Form 29: Conference Registration -->
+    <div class="form-container">
+        <h3>Conference Registration</h3>
+        <form action="/submit-conference-registration" method="post">
+            <div class="form-group">
+                <label for="conference-registration-name">Name:</label>
+                <input type="text" id="conference-registration-name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="conference-registration-email">Email:</label>
+                <input type="email" id="conference-registration-email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="conference-registration-conference">Conference:</label>
+                <input type="text" id="conference-registration-conference" name="conference" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Register for Conference">
+            </div>
+        </form>
+    </div>
 
+    <!-- Form 30: Event Feedback -->
+    <div class="form-container">
+        <h3>Event Feedback</h3>
+        <form action="/submit-event-feedback" method="post">
+            <div class="form-group">
+                <label for="event-feedback-name">Name:</label>
+                <input type="text" id="event-feedback-name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="event-feedback-email">Email:</label>
+                <input type="email" id="event-feedback-email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="event-feedback-comments">Comments:</label>
+                <textarea id="event-feedback-comments" name="comments" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit Feedback">
+            </div>
+        </form>
+    </div>
+
+    <!-- Form 31: Support Ticket -->
+    <div class="form-container">
+        <h3>Support Ticket</h3>
+        <form action="/submit-support-ticket" method="post">
+            <div class="form-group">
+                <label for="support-ticket-name">Name:</label>
+                <input type="text" id="support-ticket-name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="support-ticket-email">Email:</label>
+                <input type="email" id="support-ticket-email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="support-ticket-issue">Issue:</label>
+                <textarea id="support-ticket-issue" name="issue" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit Ticket">
+            </div>
+        </form>
+    </div>
+
+    <!-- Form 32: Feedback Form -->
+    <div class="form-container">
+        <h3>Feedback Form</h3>
+        <form action="/submit-feedback" method="post">
+            <div class="form-group">
+                <label for="feedback-name">Name:</label>
+                <input type="text" id="feedback-name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="feedback-email">Email:</label>
+                <input type="email" id="feedback-email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="feedback-comments">Comments:</label>
+                <textarea id="feedback-comments" name="comments" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit Feedback">
+            </div>
+        </form>
+    </div>
 </body>
 </html>
